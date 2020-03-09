@@ -14,6 +14,7 @@ var getHtmlConfig = function (name) {
         chunks: ['common', name] // 公共文件
     };
 };
+
 const config = {
     entry: {
         'common':['./src/page/common/index.js'],
@@ -33,6 +34,15 @@ const config = {
             { test: /\.css$/, loader: Ex.extract('style-loader', 'css-loader')},
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' }
         ]
+    },
+    resolve: {
+        alias: {
+            node_modules: __dirname + '/node_modules',
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            service: __dirname + '/src/service',
+            image: __dirname + '/src/image',
+        }
     },
     plugins:[
         new webpack.optimize.CommonsChunkPlugin({
