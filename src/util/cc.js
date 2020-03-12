@@ -39,9 +39,9 @@ let _cc = {
         return result? decodeURIComponent(result[2]): null;
     },
     // 渲染html
-    renderHtml: function(htmlTemplate, data){
-        let template = Hogan.compile(htmlTemplate),
-            result = template.render(data);
+    renderHtml : function(htmlTemplate, data){
+        var template    = Hogan.compile(htmlTemplate),
+            result      = template.render(data);
         return result;
     },
     // 提示
